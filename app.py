@@ -36,7 +36,7 @@ if img_file is not None:
 def predict(image):
     img = gray2rgb(image)
     img = np.expand_dims(img, axis = 0)   
-    pred = (model.predict_proba(img) > 0.6).astype("int32")[0]
+    pred = (model.predict(img) > 0.6).astype("int32")[0]
     if pred == 1:
         class_ = 'Pneumonia'
     else:

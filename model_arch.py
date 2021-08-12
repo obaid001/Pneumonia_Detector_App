@@ -4,7 +4,7 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.applications import DenseNet121
 def model_arch():
     model = Sequential()
-    base = DenseNet121(include_top = False, input_shape = (256, 256, 3), pooling = 'avg', classes = 2)
+    base = DenseNet121(include_top = False, input_shape = (128, 128, 3), pooling = 'avg', classes = 2)
     for l in base.layers:
         l.trainable = False
 

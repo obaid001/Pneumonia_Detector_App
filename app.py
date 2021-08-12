@@ -36,7 +36,7 @@ if img_file is not None:
 def predict(image):
     img = gray2rgb(image)
     img = np.expand_dims(img, axis = 0)   
-    pred = model.predict_classes(img)[0]
+    pred = (model.predict(np.expand_dims(test[0][0][0], 0)) > 0.5).astype("int32")[0]
     if pred == 1:
         class_ = 'Pneumonia'
     else:
@@ -46,10 +46,3 @@ def predict(image):
 
 if img_file is not None:
     predict(img)
-
-
-
-
-
-
-

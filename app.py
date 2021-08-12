@@ -9,12 +9,11 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 import model_arch
-#model = load_model('pneu.h5')
 model = model_arch.model_arch()
 weight1 = np.load('weight1.npy', allow_pickle=True)
 weight2 = np.load('weight2.npy', allow_pickle=True)
 z = weight1.tolist() + weight2.tolist()
-for i in tqdm(range(len(z))):
+for i in range(len(z)):
   model.weights[i].assign(tf.reshape(z[i], model.weights[i].numpy().shape))
   
 st.title('Pneumonia Detector')

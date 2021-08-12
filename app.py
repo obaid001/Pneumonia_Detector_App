@@ -20,7 +20,7 @@ def process(image):
     if image is not None:
         img = np.array(Image.open(image))
         img = img/255
-        img = resize(img, (256, 256))
+        img = resize(img, (128, 128))
         return img
     else:
         st.text('Upload a Image')	

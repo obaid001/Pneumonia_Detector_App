@@ -1,10 +1,6 @@
 import streamlit as st
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-from skimage.io import imshow, imsave, imread
 from skimage.transform import resize
 from skimage.color import gray2rgb
-from keras.models import load_model
 import numpy as np
 import tensorflow as tf
 from PIL import Image
